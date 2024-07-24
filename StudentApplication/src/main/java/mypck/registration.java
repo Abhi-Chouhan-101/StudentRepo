@@ -30,7 +30,7 @@ public class registration extends HttpServlet{
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		PrintWriter out = response.getWriter();
 		Connection conn = (Connection) this.getServletContext().getAttribute("myconn");
 		try {
 			PreparedStatement ps=conn.prepareStatement("insert into users values(?,?,?,?,?)");
@@ -39,15 +39,14 @@ public class registration extends HttpServlet{
 			ps.setString(3,request.getParameter("email"));
 			ps.setString(4,request.getParameter("pass"));
 			ps.setString(5,"Student");
-			ps.execute();
-			PrintWriter out = response.getWriter();
+		    ps.execute();
+		   
 			out.write("<h1>User Registration Successfuly..</h1>");
-			
-		
-			
+		   
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		
 		
