@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +9,6 @@
 
 </head>
 <body>
- <h1>Student Page..!!!</h1>
- 
- <a href="result.html">ShowResult</a>
+<h2>This is jsp page</h2>
 </body>
 </html>
